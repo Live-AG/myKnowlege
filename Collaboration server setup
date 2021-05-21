@@ -1,0 +1,53 @@
+1. Установить Liberica JDK 16 (bellsoft-jdk16.0.1+9-windows-amd64-full)
+2. Установить PostgresSQL (postgresql-13.3-2-windows-x64) 
+	2.1 Создать пользователя сервера: db_user (с правами CREATEDB) (Пароль: admin)
+	
+		-- Role: db_user
+		-- DROP ROLE db_user;
+
+		CREATE ROLE db_user WITH
+		  LOGIN
+		  NOSUPERUSER
+		  INHERIT
+		  CREATEDB
+		  NOCREATEROLE
+		  NOREPLICATION
+		  ENCRYPTED PASSWORD 'SCRAM-SHA-256$4096:aIhZm6PThvaT2458ayUhyw==$fdPzFNrUaz6nLTNC7S5En2wzotZVoDCsI6nfcf4FS+0=:j1KVM8M2jEotDFWO/7S/RQsu5D+YVINirEpsu9z9D2w=';
+	2.2 Создать базу: cs_db
+		-- Database: cs_db
+		-- DROP DATABASE cs_db;
+		
+		CREATE DATABASE cs_db
+		    WITH 
+		    OWNER = db_user
+		    ENCODING = 'UTF8'
+		    LC_COLLATE = 'Russian_Russia.1251'
+		    LC_CTYPE = 'Russian_Russia.1251'
+		    TABLESPACE = pg_default
+		    CONNECTION LIMIT = -1;
+	
+	2.3 Для базы выполнить на SQL:
+		CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+		
+3. Установить Сервер взаимодействия (1ce-installer от администратора)
+4. Выполнить в CMD:
+
+ring hazelcast instance create --dir C:\hazelcast
+ring elasticsearch instance create --dir C:\elasticsearch
+ring cs instance create --dir C:\cs
+
+ring cs --instance cs jdbc pools --name common set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
+ring cs --instance cs jdbc pools --name common set-params --username db_user
+ring cs --instance cs jdbc pools --name common set-params --password admin
+ring cs --instance cs jdbc pools --name privileged set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
+ring cs --instance cs jdbc pools --name privileged set-params --username db_user
+ring cs --instance cs jdbc pools --name privileged set-params --password admin
+
+ring hazelcast --instance hazelcast service create
+ring elasticsearch --instance elasticsearch service create
+ring cs --instance cs service create
+
+5. Проверить работу сервера: http://localhost:8087/rs/health
+6. Зарегестрировать конфигурацию:
+	ws://ххх.ххх.ххх.ххх:8087
+7. Зарегестрировать пользователей
