@@ -12,7 +12,8 @@
 		  CREATEDB
 		  NOCREATEROLE
 		  NOREPLICATION
-		  ENCRYPTED PASSWORD 'SCRAM-SHA-256$4096:aIhZm6PThvaT2458ayUhyw==$fdPzFNrUaz6nLTNC7S5En2wzotZVoDCsI6nfcf4FS+0=:j1KVM8M2jEotDFWO/7S/RQsu5D+YVINirEpsu9z9D2w=';
+		  ENCRYPTED PASSWORD 'SCRAM-SHA-256$4096:mFpryRTAVPV/JDkmZuQp5Q==$sk2IzApu9BUAhRzde9B8/tC1B5b6fGpyIHCwqoYzWmw=:2Ncjs2frFFpEQpZjKQQsq/ZCQgals4mqwkMI6lkS6es=';
+		  
 	2.2 Создать базу: cs_db
 		-- Database: cs_db
 		-- DROP DATABASE cs_db;
@@ -21,8 +22,8 @@
 		    WITH 
 		    OWNER = db_user
 		    ENCODING = 'UTF8'
-		    LC_COLLATE = 'Russian_Russia.1251'
-		    LC_CTYPE = 'Russian_Russia.1251'
+		    LC_COLLATE = 'Russian_Russia.utf8'
+		    LC_CTYPE = 'Russian_Russia.utf8'
 		    TABLESPACE = pg_default
 		    CONNECTION LIMIT = -1;
 	
