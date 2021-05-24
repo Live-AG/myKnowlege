@@ -49,6 +49,9 @@ ring elasticsearch --instance elasticsearch service create
 ring cs --instance cs service create
 
 5. Проверить работу сервера: http://localhost:8087/rs/health
-6. Зарегестрировать конфигурацию:
+6. Выполнить настройку
+curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"db_user\", \"password\" : \"admin\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server
+
+7. Зарегестрировать конфигурацию:
 	ws://ххх.ххх.ххх.ххх:8087
-7. Зарегестрировать пользователей
+8. Зарегестрировать пользователей
