@@ -59,3 +59,64 @@ curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:post
 
 ***MINIO***
 https://www.8host.com/blog/nastrojka-xranilishha-obektov-s-pomoshhyu-minio-v-ubuntu-18-04/
+
+
+
+*******************************LINUX********************************
+
+awk: line 2: function gensub never defined !!!!!!!!!!!!!!!!!
+
+//********************************** Info source **********************************
+https://nizamov.school/ustanovka-servera-vzaimodejstviya-1s-na-ubuntu-server-20-04/
+//*********************************************************************************
+
+cd /opt/1C/1CE/components/1c-enterprise-ring-0.19.5+12-x86_64
+
+sudo ./ring cs instance create --dir /var/cs/cs_instance --owner cs_user
+
+sudo ./ring cs instance create --dir /var/cs/cs_instance --owner cs_user
+sudo ./ring cs --instance cs_instance service create --username cs_user --java-home JAVA_HOME --stopped
+sudo ./ring cs instance create --dir /var/cs/cs_instance --owner cs_user
+
+
+postgres
+
+sudo ./ring hazelcast instance create --dir /var/cs/hc_instance --owner hc_user
+sudo ./ring hazelcast --instance hc_instance service create --username hc_user --java-home JAVA_HOME --stopped
+
+sudo ./ring elasticsearch instance create --dir /var/cs/elastic_instance --owner elastic_user
+sudo ./ring elasticsearch --instance elastic_instance service create --username elastic_user --java-home JAVA_HOME --stopped
+
+sudo ./ring cs --instance cs_instance jdbc pools --name common set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
+sudo ./ring cs --instance cs_instance jdbc pools --name common set-params --username postgres
+sudo ./ring cs --instance cs_instance jdbc pools --name common set-params --password postgres
+sudo ./ring cs --instance cs_instance jdbc pools --name privileged set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
+sudo ./ring cs --instance cs_instance jdbc pools --name privileged set-params --username postgres
+sudo ./ring cs --instance cs_instance jdbc pools --name privileged set-params --password postgres
+
+sudo ./ring cs --instance cs_instance websocket set-params --hostname 192.168.1.39
+sudo ./ring cs --instance cs_instance websocket set-params --port 8087
+
+sudo ./ring hazelcast --instance hc_instance service start
+sudo ./ring elasticsearch --instance elastic_instance service start
+sudo ./ring cs --instance cs_instance service start
+
+sudo apt update
+sudo apt install curl
+
+sudo curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"postgres\", \"password\" : \"postgres\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server
+
+firewall-cmd --reload
+firewall-cmd --zone=public --add-port=8087/tcp --permanent
+
+
+#FILE STORAGE SETUP
+
+ sudo mkdir -p /opt/minio
+ sudo chown user:user /opt/minio
+ sudo mkdir -p /var/minio
+ sudo chown user:user /var/minio
+ cd /opt/minio
+ wget https://dl.min.io/server/minio/release/linux-amd64/minio
+ sudo chmod +x minio
+ sudo MINIO_ROOT_USER=admin MINIO_ROOT_PASSWORD=12345678 ./minio server /mnt/data --console-address ":9001"
