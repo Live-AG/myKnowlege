@@ -57,6 +57,7 @@ curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:post
 8. Зарегестрировать пользователей
 9. Для настройки файлового хранилища MIMO см. https://its.1c.ru/db/metod8dev/content/5982/hdoc
 
+
 ***MINIO***
 https://www.8host.com/blog/nastrojka-xranilishha-obektov-s-pomoshhyu-minio-v-ubuntu-18-04/
 
