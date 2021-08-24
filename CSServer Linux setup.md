@@ -1,4 +1,9 @@
 
+# Links
+
+https://nizamov.school/ustanovka-servera-vzaimodejstviya-1s-na-ubuntu-server-20-04/
+
+
 # JAVA Install
 
 `sudo apt update`
