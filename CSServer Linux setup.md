@@ -23,4 +23,17 @@ set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd6
 `source .bashrc`
 `echo $JAVA_HOME`
 
-# Go to sleep
+# Install curl
+
+`sudo apt update`
+`sudo apt install curl`
+
+# Install Postgres
+
+`sudo apt-get update`
+`sudo apt-get install postgresql postgresql-contrib`
+
+# Install pgAdmin 4
+
+
+
