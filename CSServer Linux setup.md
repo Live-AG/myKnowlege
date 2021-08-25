@@ -35,5 +35,6 @@ set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd6
 
 # Install pgAdmin 4
 
+[[GitCommands]]
 
 
