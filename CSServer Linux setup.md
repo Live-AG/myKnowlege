@@ -154,4 +154,8 @@ Go to 1CS catalog (exemple: `/home/andrey/Downloads/1c_cs_10.0.47_linux_x86_64`)
 
 Проверяем, что все запустилось: `sudo curl http://localhost:8087/rs/health`
 
+Инициализируем базу данных: 
+`sudo curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"postgres\", \"password\" : \"postgres\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server`
+
+
 # Go to sleep
