@@ -218,3 +218,6 @@ insert in file:
     'V2', false, 1073741824, 1073741824, 104857600, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL, NULL, NULL, 'ACTIVE', false, true, 0, 0, NULL);
 
 `sudo ./ring cs --instance cs_instance service restart`
+
+
+Базу 1С подключаем по адресу: `ws://192.168.1.39:8087`
