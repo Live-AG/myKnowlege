@@ -2,6 +2,7 @@
 # Links
 
 https://nizamov.school/ustanovka-servera-vzaimodejstviya-1s-na-ubuntu-server-20-04/
+https://its.1c.ru/db/metod8dev#content:5982:hdoc:_top:minio
 
 # JAVA Install
 
@@ -166,8 +167,6 @@ Go to 1CS catalog (exemple: `/home/andrey/Downloads/1c_cs_10.0.47_linux_x86_64`)
 
 # Install Minio server 
 
-https://its.1c.ru/db/metod8dev#content:5982:hdoc:_top:minio
-
 Подготовка хранилища:  
 
 `sudo useradd minio_user`
@@ -243,10 +242,11 @@ insert in file:
 
 INSERT INTO public.storage_server(id, type, base_url, container_url, container_name, region, access_key_id, secret_key, signature_version, is_deleted, upload_limit, download_limit, file_size_limit, created_at, updated_at, cdn_url, cdn_key_id, cdn_secret_key, state, cdn_enabled, path_style_access_enabled, bytes_to_keep, days_to_keep, pricing_url)
 VALUES(
-uuid_generate_v4(), 'AMAZON', 'http://localhost:9000','http://localhost:9000/${container_name}',
+uuid_generate_v4(), 'AMAZON', 'http://192.168.1.39:9000','http://192.168.1.39:9000/${container_name}',
 'cs-bucket',
 '',
 'minio',
 'minio123',
 'V2', false, 1073741824, 1073741824, 104857600, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL, NULL, NULL, 'ACTIVE', false, true, 0, 0, NULL);
 
+sudo ./ring cs --instance cs_instance service restart
