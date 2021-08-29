@@ -20,6 +20,10 @@ go to home directory
     cd ~
     sudo nano .bashrc
 
+set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/bellsoft-java11-full-amd64`
+
+or
+
 set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64`
 
     source .bashrc
