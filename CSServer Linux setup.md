@@ -129,6 +129,7 @@ Go to 1CS catalog (exemple: `/home/andrey/Downloads/1c_cs_10.0.47_linux_x86_64`)
 Проверяем, что все запустилось: `sudo curl http://localhost:8087/rs/health`
 
 Инициализируем базу данных: 
+
     sudo curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"postgres\", \"password\" : \"postgres\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server
 
 
@@ -217,7 +218,8 @@ insert in file:
     'minio123',
     'V2', false, 1073741824, 1073741824, 104857600, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL, NULL, NULL, 'ACTIVE', false, true, 0, 0, NULL);
 
-`sudo ./ring cs --instance cs_instance service restart`
+
+`psql -U postgres --dbname=cs_db --file=/tmp/create_bucket.sql`
 
 
 Базу 1С подключаем по адресу: `ws://192.168.1.39:8087`
