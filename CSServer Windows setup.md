@@ -33,23 +33,24 @@
 3. Установить Сервер взаимодействия (1ce-installer от администратора)
 4. Выполнить в CMD:
 
-	ring hazelcast instance create --dir C:\hazelcast
-	ring elasticsearch instance create --dir C:\elasticsearch
-	ring cs instance create --dir C:\cs
+		ring hazelcast instance create --dir C:\hazelcast
+		ring elasticsearch instance create --dir C:\elasticsearch
+		ring cs instance create --dir C:\cs
 
-	ring cs --instance cs jdbc pools --name common set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
-	ring cs --instance cs jdbc pools --name common set-params --username db_user
-	ring cs --instance cs jdbc pools --name common set-params --password admin
-	ring cs --instance cs jdbc pools --name privileged set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
-	ring cs --instance cs jdbc pools --name privileged set-params --username db_user
-	ring cs --instance cs jdbc pools --name privileged set-params --password admin
+		ring cs --instance cs jdbc pools --name common set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
+		ring cs --instance cs jdbc pools --name common set-params --username db_user
+		ring cs --instance cs jdbc pools --name common set-params --password admin
+		ring cs --instance cs jdbc pools --name privileged set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
+		ring cs --instance cs jdbc pools --name privileged set-params --username db_user
+		ring cs --instance cs jdbc pools --name privileged set-params --password admin
 
-	ring hazelcast --instance hazelcast service create
-	ring elasticsearch --instance elasticsearch service create
-	ring cs --instance cs service create
+		ring hazelcast --instance hazelcast service create
+		ring elasticsearch --instance elasticsearch service create
+		ring cs --instance cs service create
 
 5. Выполнить настройку
-	curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"db_user\", \"password\" : \"admin\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server
+
+		curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"db_user\", \"password\" : \"admin\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server
 
 6. Проверить работу сервера: http://localhost:8087/rs/health
 
@@ -65,6 +66,7 @@ https://www.8host.com/blog/nastrojka-xranilishha-obektov-s-pomoshhyu-minio-v-ubu
 Логин и Пароль (по умолчанию): minioadmin:minioadmin
 
 После установки Minio выполнить запрос в Postgres:
+
 	INSERT INTO public.storage_server(id, type, base_url, container_url, container_name, region, access_key_id, secret_key, signature_version, is_deleted, upload_limit, download_limit, file_size_limit, created_at, updated_at, cdn_url, cdn_key_id, cdn_secret_key, state, cdn_enabled, path_style_access_enabled, bytes_to_keep, days_to_keep, pricing_url)
 	VALUES(
 	uuid_generate_v4(), 'AMAZON', 'http://10.78.77.62:9000','http://10.78.77.62:9000/${container_name}',
