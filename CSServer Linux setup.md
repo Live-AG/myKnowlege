@@ -7,7 +7,9 @@ https://its.1c.ru/db/metod8dev#content:5982:hdoc:_top:minio
 
 # JAVA Install
 
-Instalation of Liberica JDK 11 `https://libericajdk.ru/pages/downloads/#/java-11-lts`
+Installation of Liberica JDK 11 `https://libericajdk.ru/pages/downloads/#/java-11-lts`
+    
+    sudo dpkg -i имя_пакета.deb
 
 or
 
