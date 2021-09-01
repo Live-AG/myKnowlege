@@ -13,9 +13,8 @@
 
 # Git configuration
 
-`git config --global user.email "AGusarov@live.ag"`
-
-`git config --global user.name "Andrey Gusarov"`
+    git config --global user.email "AGusarov@live.ag"
+    git config --global user.name "Andrey Gusarov"
 
 ---
 
