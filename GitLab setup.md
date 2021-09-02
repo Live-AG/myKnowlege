@@ -36,7 +36,7 @@ then
 
 to change root password
 
-    sudo gitlab-rake "gitlab:password:reset[johndoe]"
+    sudo gitlab-rake "gitlab:password:reset[root]"
 
 
 # Goto Sleep
