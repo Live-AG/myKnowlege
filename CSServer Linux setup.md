@@ -38,8 +38,8 @@ set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd6
 
 # Install Postgres
 
-    sudo apt-get update
-    sudo apt-get install postgresql postgresql-contrib
+    sudo apt update
+    sudo apt install postgresql postgresql-contrib
 
 Подключаемся к консоли PostgreSQL:
 

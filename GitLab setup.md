@@ -1,3 +1,10 @@
+
+## Summary
+
+Password: `1qaz@WSX`
+
+
+
 ## Installation from
 
 https://about.gitlab.com/install/#ubuntu
@@ -21,14 +28,13 @@ https://about.gitlab.com/install/#ubuntu
 
     sudo ufw status
 
-
 edit file
 
     sudo nano /etc/gitlab/gitlab.rb
 
 set in file
 
-    external_url 'https://example.com'
+    external_url 'http://example.com'
 
 then
 
