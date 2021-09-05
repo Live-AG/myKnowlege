@@ -11,6 +11,10 @@
 
 ---
 
+# VS code install
+
+	sudo snap install --classic code # or code-insiders
+
 # Git configuration
 
     git config --global user.email "AGusarov@live.ag"
