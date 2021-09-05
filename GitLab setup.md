@@ -3,8 +3,6 @@
 
 Password: `1qaz@WSX`
 
-
-
 ## Installation from
 
 https://about.gitlab.com/install/#ubuntu
@@ -17,8 +15,11 @@ https://about.gitlab.com/install/#ubuntu
     curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
 
 ---
-
+### To install Enterprise Edition
     sudo apt install gitlab-ee
+
+### To install Community Edition
+    sudo apt install gitlab-ce
 
 ---
 
@@ -34,15 +35,24 @@ edit file
 
 set in file
 
-    external_url 'http://example.com'
+    external_url 'http://gitlab.example.com'
+
+if needed to another port change
+
+    external_url 'http://gitlab.example.com:9999'
 
 then
 
     sudo gitlab-ctl reconfigure
 
+If porn changed
+
+    sudo ufw allow 9999
+
 to change root password
 
     sudo gitlab-rake "gitlab:password:reset[root]"
 
+then check in browser: `http://localhost:9999'
 
 # Goto Sleep

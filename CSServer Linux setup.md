@@ -5,7 +5,7 @@ https://nizamov.school/ustanovka-servera-vzaimodejstviya-1s-na-ubuntu-server-20-
 
 https://its.1c.ru/db/metod8dev#content:5982:hdoc:_top:minio
 
-# JAVA Install
+# Install JAVA
 
 Installation of Liberica JDK 11 `https://libericajdk.ru/pages/downloads/#/java-11-lts`
     
@@ -31,23 +31,26 @@ set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd6
     source .bashrc
     echo $JAVA_HOME
 
-# Install curl
+# Install Curl
 
     sudo apt update
     sudo apt install curl
 
-# Install Postgres
+# Install PostgreSQL
 
     sudo apt update
     sudo apt install postgresql postgresql-contrib
 
 Подключаемся к консоли PostgreSQL:
 
-`sudo -u postgres psql`
+    sudo -u postgres psql
+    \password
 
 Устанавливаем пароль пользователю postgres. Я оставляю стандартный пароль, так как при инициализации базы данных ниже, мне не удалось передать сложный пароль в конфиг.
 
-`\password` -> `postgres` -> `postgres`
+-> `postgres` -> `postgres`
+
+# Create DataBase
 
 Создаем базу данных, устанавливаем расширение и выходим
 
@@ -56,12 +59,12 @@ set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd6
     CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
     \q
 
-# Install pgAdmin 4
+# Install pgAdmin4
 
 Setup the repository
 Install the public key for the repository (if not done previously):
 
-    sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub sudo apt add
+    sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
 
 Create the repository configuration file:
 
@@ -69,7 +72,7 @@ Create the repository configuration file:
 
 Install pgAdmin
 
-`sudo apt install pgadmin4`
+    sudo apt install pgadmin4
 
 In pgAdmin Tool
 Password: `postgres`
@@ -79,7 +82,7 @@ Base: `Postgres`
 Download CS server: `https://releases.1c.ru/version_files?nick=CollaborationSystem&ver=10.0.47`
 Go to 1CS catalog (exemple: `/home/andrey/Downloads/1c_cs_10.0.47_linux_x86_64`)
 
-`sudo ./1ce-installer`
+    sudo ./1ce-installer
 
 Создаем пользователя, необходимые папки и назначаем права.
 
@@ -159,9 +162,8 @@ Go to 1CS catalog (exemple: `/home/andrey/Downloads/1c_cs_10.0.47_linux_x86_64`)
 
 Открыть порт:
 
--`sudo firewall-cmd --zone="public --add-port=9000/tcp" --permanent`
-
--`sudo firewall-cmd --reload`
+    sudo firewall-cmd --zone="public --add-port=9000/tcp" --permanent
+    sudo firewall-cmd --reload
 
 or
 
@@ -169,7 +171,9 @@ or
 
 # configure Mino
 
-`sudo nano /etc/default/minio`
+edit `minio`
+
+    sudo nano /etc/default/minio
 
 insert in file:
 
@@ -177,7 +181,9 @@ insert in file:
     MINIO_ROOT_USER=minio
     MINIO_ROOT_PASSWORD=minio123
 
-`sudo nano /etc/systemd/system/minio.service`
+edit `minio.service`
+
+    sudo nano /etc/systemd/system/minio.service
 
 insert in file:
 
@@ -208,9 +214,8 @@ insert in file:
 
 # connecting Minio
 
-`sudo su - postgres`
-
-`nano /tmp/create_bucket.sql`
+sudo su - postgres
+nano /tmp/create_bucket.sql
 
 insert in file:
 
@@ -223,8 +228,9 @@ insert in file:
     'minio123',
     'V2', false, 1073741824, 1073741824, 104857600, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL, NULL, NULL, 'ACTIVE', false, true, 0, 0, NULL);
 
+---
 
-`psql -U postgres --dbname=cs_db --file=/tmp/create_bucket.sql`
+    psql -U postgres --dbname=cs_db --file=/tmp/create_bucket.sql
 
 
 Базу 1С подключаем по адресу: `ws://192.168.1.39:8087`
