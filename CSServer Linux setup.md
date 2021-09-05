@@ -61,8 +61,7 @@ set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd6
 Setup the repository
 Install the public key for the repository (if not done previously):
 
-    sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub
-    sudo apt-key add
+    sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub sudo apt add
 
 Create the repository configuration file:
 
