@@ -27,3 +27,8 @@
 # Git push
 
 `git push --all`
+
+
+#Push to other storage
+
+    git pull --rebase <path>
