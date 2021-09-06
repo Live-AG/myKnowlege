@@ -68,7 +68,7 @@ To set up the push URLs do this::
     git remote set-url --add --push origin git@bitbucket.org:ccgmurdoch/my-project.git
 
         git remote set-url --add --push origin https://github.com/live-ag/myKnowlege
-        git remote set-url --add --push origin http://localhost:9999/root/myknowlege
+        git remote set-url --add --push origin http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myknowlege.git
 
 
 It will change the ``remote.origin.pushurl`` config entry. Now pushes
