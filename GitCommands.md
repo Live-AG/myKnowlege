@@ -67,8 +67,8 @@ To set up the push URLs do this::
     git remote set-url --add --push origin git@github.com:muccg/my-project.git
     git remote set-url --add --push origin git@bitbucket.org:ccgmurdoch/my-project.git
 
-git remote set-url --add --push origin https://github.com/live-ag/myKnowlege
-git remote set-url --add --push origin http://localhost:9999/root/myknowlege
+        git remote set-url --add --push origin https://github.com/live-ag/myKnowlege
+        git remote set-url --add --push origin http://localhost:9999/root/myknowlege
 
 
 It will change the ``remote.origin.pushurl`` config entry. Now pushes
@@ -110,3 +110,13 @@ out of sync::
 
     git merge github/next_release bb/next_release
 
+# Push to a repository using access_token
+
+    git remote add github git@github.com:muccg/my-project.git
+    git remote add github git@bitbucket.org:ccgmurdoch/my-project.git
+
+    git remote add origin https://<access-token-name>:<access-token>@gitlab.com/myuser/myrepo.git
+
+    git remote add gitlab http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myknowlege.git
+
+Token   `gFKrZ6G9LWJXAxQ2ubcu`
