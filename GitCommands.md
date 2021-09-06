@@ -57,6 +57,11 @@ Suppose your git remotes are set up like this::
     git remote add github git@github.com:muccg/my-project.git
     git remote add bb git@bitbucket.org:ccgmurdoch/my-project.git
 
+example
+
+        git remote add github https://Live-AG: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@github.com/Live-AG/myObsidian
+        git remote add gitlab http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myObsidian
+
 The ``origin`` remote probably points to one of these URLs.
 
 
@@ -69,8 +74,8 @@ To set up the push URLs do this::
 
 example
 
-        git remote set-url --add --push origin https://github.com/live-ag/myKnowlege
-        git remote set-url --add --push origin http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myknowlege.git
+        git remote set-url --add --push origin https://Live-AG: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@github.com/Live-AG/myObsidian
+        git remote set-url --add --push origin http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myObsidian
 
 
 It will change the ``remote.origin.pushurl`` config entry. Now pushes
