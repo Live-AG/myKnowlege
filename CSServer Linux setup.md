@@ -212,7 +212,7 @@ insert in file:
     sudo systemctl enable minio.service
     sudo systemctl start minio.service
 
-# Создание хранилища
+# Create bucket
 Перейти `http//localhost:9000`
 В интерфейсе Minio создать Bucket: `cs-bucket`
 
