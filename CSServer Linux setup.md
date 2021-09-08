@@ -5,6 +5,8 @@ https://nizamov.school/ustanovka-servera-vzaimodejstviya-1s-na-ubuntu-server-20-
 
 https://its.1c.ru/db/metod8dev#content:5982:hdoc:_top:minio
 
+https://its.1c.ru/db/cs20#bookmark:cs:TI000000005
+
 # Install JAVA
 
 Installation of Liberica JDK 11 `https://libericajdk.ru/pages/downloads/#/java-11-lts`
