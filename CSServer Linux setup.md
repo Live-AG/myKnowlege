@@ -5,6 +5,8 @@ https://nizamov.school/ustanovka-servera-vzaimodejstviya-1s-na-ubuntu-server-20-
 
 https://its.1c.ru/db/metod8dev#content:5982:hdoc:_top:minio
 
+https://its.1c.ru/db/cs20#bookmark:cs:TI000000005
+
 # Install JAVA
 
 Installation of Liberica JDK 11 `https://libericajdk.ru/pages/downloads/#/java-11-lts`
@@ -78,7 +80,7 @@ In pgAdmin Tool
 Password: `postgres`
 Base: `Postgres`
 
-# Установка сервер взаимодействия 1С
+# Install CS server
 Download CS server: `https://releases.1c.ru/version_files?nick=CollaborationSystem&ver=10.0.47`
 Go to 1CS catalog (exemple: `/home/andrey/Downloads/1c_cs_10.0.47_linux_x86_64`)
 
@@ -136,16 +138,15 @@ Go to 1CS catalog (exemple: `/home/andrey/Downloads/1c_cs_10.0.47_linux_x86_64`)
 
 Проверяем, что все запустилось: `sudo curl http://localhost:8087/rs/health`
 
-Инициализируем базу данных: 
-
-    sudo curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"postgres\", \"password\" : \"postgres\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server
-
-
-# If has port problems
+# Open ports
 
     sudo ufw allow 8087
     sudo ufw allow 22
     sudo ufw enable
+
+# Base initialization: 
+
+    sudo curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"postgres\", \"password\" : \"postgres\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server
 
 # Install Minio server 
 
@@ -161,15 +162,14 @@ Go to 1CS catalog (exemple: `/home/andrey/Downloads/1c_cs_10.0.47_linux_x86_64`)
     sudo chmod +x minio
 
 Открыть порт:
+    sudo ufw allow 9000
+    
+or
 
     sudo firewall-cmd --zone="public --add-port=9000/tcp" --permanent
     sudo firewall-cmd --reload
 
-or
-
-    sudo ufw allow 9000
-
-# configure Mino
+# Configure Mino
 
 edit `minio`
 
@@ -212,16 +212,20 @@ insert in file:
     sudo systemctl enable minio.service
     sudo systemctl start minio.service
 
-# connecting Minio
+# Create bucket
+Перейти `http//localhost:9000`
+В интерфейсе Minio создать Bucket: `cs-bucket`
+
+# Connect Minio to CS server
 
 sudo su - postgres
 nano /tmp/create_bucket.sql
 
-insert in file:
+insert in file - заменить `<ServerIP>` :
 
     INSERT INTO public.storage_server(id, type, base_url, container_url, container_name, region, access_key_id, secret_key, signature_version, is_deleted, upload_limit, download_limit, file_size_limit, created_at, updated_at, cdn_url, cdn_key_id, cdn_secret_key, state, cdn_enabled, path_style_access_enabled, bytes_to_keep, days_to_keep, pricing_url)
     VALUES(
-    uuid_generate_v4(), 'AMAZON', 'http://192.168.1.39:9000','http://192.168.1.39:9000/${container_name}',
+    uuid_generate_v4(), 'AMAZON', 'http://<ServerIP>:9000','http://<ServerIP>:9000/${container_name}',
     'cs-bucket',
     '',
     'minio',
