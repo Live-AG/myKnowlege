@@ -1,0 +1,1 @@
+[Что такое ClickHouse](https://clickhouse.tech/docs/ru/)

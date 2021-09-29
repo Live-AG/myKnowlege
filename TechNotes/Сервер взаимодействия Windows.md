@@ -1,0 +1,87 @@
+## Сервер
+`lng-srv-iistest`
+`10.78.77.62`
+
+### Postgres
+Дистриб: `postgresql-13.3-2-windows-x64`
+Пароль: `admin`
+Порт: `5432`
+
+### Java JDK
+Дистриб: `bellsoft-jdk16.0.1+9-windows-amd64-full`
+
+### Collaboration server
+Дистриб: `1c_cs_10.0.47_windows_x86_64`
+
+#### Настройка сервера
+1. Установить Liberica JDK 16 (bellsoft-jdk16.0.1+9-windows-amd64-full)
+2. Установить PostgresSQL (postgresql-13.3-2-windows-x64)
+- Создать пользователя сервера: db_user (с правами CREATEDB) (Пароль: admin)
+```
+-- Role: db_user
+-- DROP ROLE db_user;
+
+CREATE ROLE db_user WITH
+	LOGIN
+	NOSUPERUSER
+	INHERIT
+	CREATEDB
+	NOCREATEROLE
+	NOREPLICATION
+	ENCRYPTED PASSWORD 'SCRAM-SHA-256$4096:mFpryRTAVPV/JDkmZuQp5Q==$sk2IzApu9BUAhRzde9B8/tC1B5b6fGpyIHCwqoYzWmw=:2Ncjs2frFFpEQpZjKQQsq/ZCQgals4mqwkMI6lkS6es=';
+```
+
+- Создать базу: cs_db	
+```
+-- Database: cs_db
+-- DROP DATABASE cs_db;
+
+CREATE DATABASE cs_db WITH
+	OWNER = db_user
+	ENCODING = 'UTF8'
+	LC_COLLATE = 'Russian_Russia.utf8'
+	LC_CTYPE = 'Russian_Russia.utf8'
+	TABLESPACE = pg_default
+	CONNECTION LIMIT = -1;
+```
+
+- Для базы выполнить на SQL:
+`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`
+
+3. Установить Сервер взаимодействия (1ce-installer от администратора)
+4. Выполнить в CMD:
+```
+ring hazelcast instance create --dir C:\hazelcast
+ring elasticsearch instance create --dir C:\elasticsearch
+ring cs instance create --dir C:\cs
+
+ring cs --instance cs websocket set-params --hostname localhost 
+ring cs --instance cs websocket set-params --port 9094
+
+ring cs --instance cs jdbc pools --name common set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
+ring cs --instance cs jdbc pools --name common set-params --username db_user
+ring cs --instance cs jdbc pools --name common set-params --password admin
+
+ring cs --instance cs jdbc pools --name privileged set-params --url jdbc:postgresql://localhost:5432/cs_db?currentSchema=public
+ring cs --instance cs jdbc pools --name privileged set-params --username db_user
+ring cs --instance cs jdbc pools --name privileged set-params --password admin
+
+ring hazelcast --instance hazelcast service create
+ring elasticsearch --instance elasticsearch service create
+ring cs --instance cs service create
+```
+
+5. Проверить работу сервера: http://localhost:8087/rs/health
+6. Выполнить настройку
+```
+curl -Sf -X POST -H "Content-Type: application/json" -d "{ \"url\" : \"jdbc:postgresql://localhost:5432/cs_db\", \"username\" : \"db_user\", \"password\" : \"admin\", \"enabled\" : true }" -u admin:admin http://localhost:8087/admin/bucket_server
+```
+
+7. Зарегестрировать конфигурацию: ws://ххх.ххх.ххх.ххх:9094 `ws://10.78.77.62:9094`
+8. Зарегестрировать пользователей с помощью обработки
+
+
+
+
+
+
