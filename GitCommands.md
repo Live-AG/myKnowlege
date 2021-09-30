@@ -1,15 +1,18 @@
 
 
-# Git Install
+# Git Setup
 
-`sudo apt update`
+    sudo apt update
 
-`sudo apt install git`
+    sudo apt install git
 
-`cd ~/Documents`
+    cd ~/Documents
+    git clone https://github.com/Live-AG/myKnowlege
 
-`git clone https://github.com/Live-AG/myKnowlege`
+    git config --global user.email "AGusarov@live.ag"
+    git config --global user.name "Andrey Gusarov"
 
+    git remote add github https://Live-AG:<myToken>@github.com/Live-AG/myKnowlege
 ---
 
 # VS code install
