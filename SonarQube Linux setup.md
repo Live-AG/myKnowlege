@@ -9,7 +9,6 @@ https://infoit.com.ua/linux/kak-ustanovit-sonarqube-na-ubuntu-20-04-lts/
 
 [[Java11 Install]]
 
-
     sudo apt update
     sudo apt install openjdk-11-jdk
     java -version
