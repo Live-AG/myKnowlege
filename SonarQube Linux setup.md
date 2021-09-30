@@ -1,9 +1,6 @@
 git# links
 
-https://si-dev.com/ru/blog/how-to-install-sonarqube-on-ubuntu-18-04
-
-
-https://infoit.com.ua/linux/kak-ustanovit-sonarqube-na-ubuntu-20-04-lts/
+https://www.vultr.com/docs/install-sonarqube-on-ubuntu-20-04-lts
 
 # Inastall JAVA
 
@@ -21,3 +18,8 @@ go to home directory
 set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64`
 
     source .bashrc
+
+# Install Posgres
+
+    sudo apt install postgresql postgresql-contrib
+
