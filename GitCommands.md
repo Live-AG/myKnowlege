@@ -1,4 +1,6 @@
 
+myKnowlege token: `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`
+
 # Git Install
 
 `sudo apt update`
