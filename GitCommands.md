@@ -2,7 +2,6 @@
 myKnowlege token: `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`
 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
 
-
 # Git Install
 
 `sudo apt update`
