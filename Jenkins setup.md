@@ -1,5 +1,7 @@
 # Jenkins install
 
+6hyYUbyNwkxDF6yfxqy5
+
 [[Java11 Install]]
 
 Add repository key
