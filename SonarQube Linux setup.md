@@ -23,15 +23,15 @@ set line at the end of file: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd6
 
 Switch to the postgres user.
 
-    $ su - postgres
+    su - postgres
 
 Create a user named sonar.
 
-    $ createuser sonar
+    createuser sonar
 
 Log in to PostgreSQL.
 
-    $ psql
+    psql
 
 Set a password for the sonar user. Use a strong password in place of my_strong_password.
 
@@ -51,13 +51,13 @@ Exit PostgreSQL.
 
 Return to your non-root sudo user account.
 
-    $ exit
+    exit
 
 # Download and Install SonarQube
 
 nstall the zip utility, which is needed to unzip the SonarQube files.
 
-    $ sudo apt-get install zip -y
+    sudo apt-get install zip -y
 
 Locate the latest download URL from the [[SonarQube official download]](https://www.sonarqube.org/downloads/) page.
 
@@ -85,21 +85,21 @@ Create a dedicated user and group for SonarQube, which can not run as the root u
 
 Create a sonar group.
 
-    $ sudo groupadd sonar
+    sudo groupadd sonar
 
 Create a sonar user and set /opt/sonarqube as the home directory.
 
-    $ sudo useradd -d /opt/sonarqube -g sonar sonar
+    sudo useradd -d /opt/sonarqube -g sonar sonar
 
 Grant the sonar user access to the /opt/sonarqube directory.
 
-    $ sudo chown sonar:sonar /opt/sonarqube -R
+    sudo chown sonar:sonar /opt/sonarqube -R
 
 ## Configure SonarQube
 
 Edit the SonarQube configuration file.
 
-    $ sudo nano /opt/sonarqube/conf/sonar.properties
+    sudo nano /opt/sonarqube/conf/sonar.properties
 
 Find the following lines:
 
@@ -119,7 +119,7 @@ Save and exit the file.
 
 Edit the sonar script file.
 
-    $ sudo nano /opt/sonarqube/bin/linux-x86-64/sonar.sh
+    sudo nano /opt/sonarqube/bin/linux-x86-64/sonar.sh
 
 About 50 lines down, locate this line:
 
@@ -136,7 +136,7 @@ Save and exit the file.
 
 Create a systemd service file to start SonarQube at system boot.
 
-    $ sudo nano /etc/systemd/system/sonar.service
+    sudo nano /etc/systemd/system/sonar.service
 
 Paste the following lines to the file.
 
@@ -164,15 +164,15 @@ Save and exit the file.
 
 Enable the SonarQube service to run at system startup.
 
-    $ sudo systemctl enable sonar
+    sudo systemctl enable sonar
 
 Start the SonarQube service.
 
-    $ sudo systemctl start sonar
+    sudo systemctl start sonar
 
 Check the service status.
 
-    $ sudo systemctl status sonar
+    sudo systemctl status sonar
 
 # Modify Kernel System Limits
 
@@ -180,7 +180,7 @@ SonarQube uses Elasticsearch to store its indices in an MMap FS directory. It re
 
 Edit the sysctl configuration file.
 
-    $ sudo nano /etc/sysctl.conf
+    sudo nano /etc/sysctl.conf
 
 Add the following lines.
 
