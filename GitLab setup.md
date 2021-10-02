@@ -26,6 +26,7 @@ https://about.gitlab.com/install/#ubuntu
     sudo ufw allow http
     sudo ufw allow https
     sudo ufw allow OpenSSH
+    sudo ufw enable
 
     sudo ufw status
 
