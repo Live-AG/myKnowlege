@@ -12,23 +12,23 @@ Set repository address
 
     sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 
-Install
+## Install
 
     sudo apt update
     sudo apt install jenkins
 
-# Configure service
+## Configure service
 
     sudo systemctl start jenkins
     sudo systemctl status jenkins
 
-# Configure Firewall
+## Configure Firewall
 
     sudo ufw allow 8080
     sudo ufw allow OpenSSH
     sudo ufw enable
 
-# TroubleShooting
+## TroubleShooting
 
 To analise trouble see logs at
 
