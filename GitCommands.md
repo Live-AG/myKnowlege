@@ -132,4 +132,14 @@ examle
 
     git remote add gitlab http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myknowlege.git
 
+# Git submoduls
+
+Add and Initialise
+	
+	git submodule add https://github.com/chaconinc/DbConnector
+
+	
+
+
 Token   `gFKrZ6G9LWJXAxQ2ubcu`
+
