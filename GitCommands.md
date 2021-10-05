@@ -1,11 +1,10 @@
 
-
 # Git Setup
 
     sudo apt update
 
     sudo apt install git
-
+	
     cd ~/Documents
     git clone https://github.com/Live-AG/myKnowlege
 
@@ -136,9 +135,9 @@ examle
 
 Add and Initialise
 	
-	git submodule add https://github.com/chaconinc/DbConnector
-
-	
+	`git submodule add <URL> [<Catalog>]`
+example:	
+> git submodule add https://github.com/chaconinc/DbConnector DbConnector
 
 
 Token   `gFKrZ6G9LWJXAxQ2ubcu`
