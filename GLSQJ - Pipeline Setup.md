@@ -2,6 +2,13 @@
 source:
 https://linuxhandbook.com/ci-with-gitlab-jenkins-and-sonarqube/
 
+Tokens:
+	- SonarQube (PipelineProject): c95e48c4b5594913762176f980b0f67d432c6474
+	- GitLab (PipelineProject): yxsgVouDmjxxPRPsbD2k
+	- Sonar Scaner token: bfe69028218abcf201fffe8566dca2b7 
+URL: http://192.168.1.214:8080/project/First%20Pipeline
+
+
 ### Step 1. Configurations at Sonarqube
 
 Install [[SonarQube Linux setup|SonarQube]]
@@ -27,6 +34,9 @@ We also need GitLab user’s Access Tokens that we later pass at Jenkins. This i
 -   Go to **User Settings** form Settings menu.
 -   Go to **Access Tokens**
 -   Create a personal access token by adding any unique name(**Name**) and token expiry date(**Expires at**). Also set the **Scopes** to api- Full access.
+
+Network setting:
+I looked all over the Admin page for something about **allow fetch local resources**. I found **Admin -> Settings -> Network -> Outbound Requests -> Allow requests to the local network from hooks and services**
 
 ### Step 3. Configuration at Jenkins
 Install [[Jenkins setup|Jenkins]]
