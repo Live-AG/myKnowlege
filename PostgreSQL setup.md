@@ -10,13 +10,13 @@ Add the PostgreSQL signing key.
 Install PostgreSQL.
 
     sudo apt install postgresql postgresql-contrib -y
+	
+> For different version: `sudo apt install postgresql-12`
 
 Enable the database server to start automatically on reboot.
 
     sudo systemctl enable postgresql
 	
-> For different version: `sudo systemctl enable postgresql-12`
-
 Start the database server.
 
     sudo systemctl start postgresql
