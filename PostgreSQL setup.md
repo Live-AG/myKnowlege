@@ -1,3 +1,4 @@
+# Install PostreSQL
 Add the PostgreSQL repository.
 
     sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
@@ -13,6 +14,8 @@ Install PostgreSQL.
 Enable the database server to start automatically on reboot.
 
     sudo systemctl enable postgresql
+	
+> For different version: `sudo systemctl enable postgresql-12`
 
 Start the database server.
 
@@ -22,6 +25,41 @@ Change the default PostgreSQL password.
 
     sudo passwd postgres
 
+## Create User and Base
+
+Switch to the postgres user.
+
+    su - postgres
+
+Create a user named sonar.
+
+    createuser <UserName>
+
+Log in to PostgreSQL.
+
+    psql
+
+Set a password for the sonar user. Use a strong password in place of my_strong_password.
+
+    ALTER USER <UserName> WITH ENCRYPTED password '<UserPwd>';
+
+Create a sonarqube database and set the owner to sonar.
+
+    CREATE DATABASE <BaseName> OWNER <UserName>;
+
+Grant all the privileges on the sonarqube database to the sonar user.
+
+    GRANT ALL PRIVILEGES ON DATABASE <BaseName> to <UserName>;
+
+Exit PostgreSQL.
+
+    \q
+
+Return to your non-root sudo user account.
+
+    exit
+	
+	
 # Install pgAdmin4
 
 Setup the repository
