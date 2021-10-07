@@ -78,3 +78,6 @@ Install pgAdmin
 In pgAdmin Tool
 Password: `postgres`
 Base: `Postgres`
+
+## Traubleshooting 
+https://interface31.ru/tech_it/2014/05/tipovye-oshibki-ustanovki-servera-1s-i-postgresql-na-platforme-linux.html
