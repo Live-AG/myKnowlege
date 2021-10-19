@@ -81,7 +81,7 @@ Base: `Postgres`
 
 Default port must be open
 
-	sudo ufw allow 5432Â
+	sudo ufw allow 5432
 
 ## Traubleshooting 
 https://interface31.ru/tech_it/2014/05/tipovye-oshibki-ustanovki-servera-1s-i-postgresql-na-platforme-linux.html
