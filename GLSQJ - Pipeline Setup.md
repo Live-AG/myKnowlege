@@ -1,3 +1,16 @@
+# Ansible
+
+Установка на Ubuntu 16.04: 
+
+	sudo apt-add-repository ppa:ansible/ansible 
+	sudo apt-get update 
+	sudo apt-get install ansible 
+
+Установка на CentOS 7: 
+
+	sudo yum install epel-release 
+	sudo yum install ansible
+
 
 source:
 https://linuxhandbook.com/ci-with-gitlab-jenkins-and-sonarqube/
