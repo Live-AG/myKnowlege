@@ -39,3 +39,6 @@ https://infostart.ru/1c/articles/810752/#p4
 ```
 http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myObsidian
 ```
+
+# Модульная (open source) конфигурация "INFOSTART ERP community edition"
+https://infostart.ru/public/1285144/
