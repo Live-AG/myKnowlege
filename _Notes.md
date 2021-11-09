@@ -33,3 +33,9 @@ https://infostart.ru/1c/articles/810752/#p4
 		t.NAME NOT LIKE 'dt%' AND t.is_ms_shipped = 0 AND i.OBJECT_ID > 255 
 	GROUP BY 
 		t.Name, s.Name, p.Rows ORDER BY t.Name
+		
+		
+		
+```
+http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myObsidian
+```
