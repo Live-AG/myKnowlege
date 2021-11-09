@@ -40,5 +40,17 @@ https://infostart.ru/1c/articles/810752/#p4
 http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myObsidian
 ```
 
+### Обработки свертки баз
+https://infostart.ru/public/1242480/
+https://infostart.ru/public/1206381/
+https://infostart.ru/public/153571/
+https://infostart.ru/public/1154357/
+
+
 # Модульная (open source) конфигурация "INFOSTART ERP community edition"
 https://infostart.ru/public/1285144/
+
+### Читать
+
+https://infostart.ru/1c/articles/703384/
+https://infostart.ru/1c/articles/811452/
