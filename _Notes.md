@@ -34,7 +34,7 @@ https://infostart.ru/1c/articles/810752/#p4
 	GROUP BY 
 		t.Name, s.Name, p.Rows ORDER BY t.Name
 		
-		
+
 		
 ```
 http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myObsidian
