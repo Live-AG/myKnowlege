@@ -38,3 +38,7 @@ git remote set-url --add --push origin http://AGusarov:q92_2ztv4xgoucPu5m3s@10.7
 
 Token
 	sius q92_2ztv4xgoucPu5m3s
+	
+Хранение параметров авторизации:
+
+	git config --global credential.helper store
