@@ -54,3 +54,6 @@ https://infostart.ru/public/1285144/
 
 https://infostart.ru/1c/articles/703384/
 https://infostart.ru/1c/articles/811452/
+
+
+![[Pasted image 20211110233735.png]]
