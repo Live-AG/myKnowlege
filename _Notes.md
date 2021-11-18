@@ -80,3 +80,7 @@ https://infostart.ru/1c/articles/811452/
 		НоваяСтрока.		
 			
 	КонецЦикла;
+
+
+### Разное
+https://auto.ru/cars/used/sale/mazda/cx_5/1105712767-b303510f/
