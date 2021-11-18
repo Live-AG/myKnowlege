@@ -6,3 +6,6 @@ https://icon-icons.com/icon/office-database/103574
 https://icon-icons.com/pack/Super-Flat-Remix-V1.08-Emblems/1506
 
 
+### Scripts
+https://infostart.ru/1c/articles/1266995/
+
