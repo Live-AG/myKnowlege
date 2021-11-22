@@ -55,7 +55,10 @@
 	sudo systemctl enable srv1cv83
 	sudo systemctl restart srv1cv83
 	sudo systemctl status srv1cv83
-
+#### При переустановке
+	sudo systemctl stop srv1cv83	
+удалить `/etc/init.d/srv1cv83`
+Выполнить предыдущую операцию
 ## Вариант 2:
 	
 >Операции по настройке должны выполняться с правами суперпользователя (root).  
