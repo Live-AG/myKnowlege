@@ -51,7 +51,7 @@
 
 ## Вариант 1:
 
-	sudo ln -s /opt/1cv8/x86_64/<Version>/srv1cv83 /etc/init.d/srv1cv83
+	sudo ln -s /opt/1cv8/x86_64/8.3.20.1613/srv1cv83 /etc/init.d/srv1cv83
 	sudo systemctl enable srv1cv83
 	sudo systemctl restart srv1cv83
 	sudo systemctl status srv1cv83
