@@ -110,6 +110,10 @@ https://its.1c.ru/db/metod8dev/content/5979/hdoc
 
 	cd /opt/1C/v8.3/x86_64/
 	sudo ./webinst -publish -apache24 -wsdir <ИМЯ ПУБЛИКАЦИИ> -dir /var/www/<ИМЯ ПУБЛИКАЦИИ> -connstr “Srvr=<ИМЯ СЕРВЕРА;Ref=<ИМЯ БАЗЫ>” -confpath /etc/apache2/apache2.conf
+	
+	
+# 	Удаление сервера 1С с Linux
+`sudo /opt/1cv8/x86_64/<1C version>/uninstaller-full`
 
 
 
