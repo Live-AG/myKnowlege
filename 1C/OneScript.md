@@ -1,4 +1,9 @@
+### Linux install
+1. Скачать с официального сайта: https://oscript.io/downloads
+2. Установить: `sudo apt install ./onescript-engine_1.7.0_all.deb`
+3. Проверить: `oscript -version`
 
+Проверить:
 
 ### Полезные ссылки
 https://infostart.ru/1c/articles/699642/
