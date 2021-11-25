@@ -7,6 +7,9 @@ https://www.youtube.com/watch?v=SnSgl2JfG9U
 http://ukveterperemen.ru/
 [info@ukveterperemen.ru](mailto:info@ukveterperemen.ru)
 
+
+http://10.78.77.62:9000/dashboard?id=EK2017-post_refactoring
+
 hyperion
 setellite
 helios
