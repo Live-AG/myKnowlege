@@ -9,6 +9,7 @@ http://ukveterperemen.ru/
 
 
 http://10.78.77.62:9000/dashboard?id=EK2017-post_refactoring
+http://ts.nostrum.ru:3000/projects/ns-063/issues
 
 hyperion
 setellite
