@@ -51,11 +51,14 @@
 
 ## Вариант 1:
 
-	sudo ln -s /opt/1cv8/x86_64/<Version>/srv1cv83 /etc/init.d/srv1cv83
+	sudo ln -s /opt/1cv8/x86_64/8.3.20.1613/srv1cv83 /etc/init.d/srv1cv83
 	sudo systemctl enable srv1cv83
 	sudo systemctl restart srv1cv83
 	sudo systemctl status srv1cv83
-
+#### При переустановке
+	sudo systemctl stop srv1cv83	
+удалить `/etc/init.d/srv1cv83`
+Выполнить предыдущую операцию
 ## Вариант 2:
 	
 >Операции по настройке должны выполняться с правами суперпользователя (root).  
@@ -110,6 +113,10 @@ https://its.1c.ru/db/metod8dev/content/5979/hdoc
 
 	cd /opt/1C/v8.3/x86_64/
 	sudo ./webinst -publish -apache24 -wsdir <ИМЯ ПУБЛИКАЦИИ> -dir /var/www/<ИМЯ ПУБЛИКАЦИИ> -connstr “Srvr=<ИМЯ СЕРВЕРА;Ref=<ИМЯ БАЗЫ>” -confpath /etc/apache2/apache2.conf
+	
+	
+# 	Удаление сервера 1С с Linux
+`sudo /opt/1cv8/x86_64/<1C version>/uninstaller-full`
 
 
 
