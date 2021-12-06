@@ -55,7 +55,7 @@ Return to your non-root sudo user account.
 
 # Download and Install SonarQube
 
-nstall the zip utility, which is needed to unzip the SonarQube files.
+install the zip utility, which is needed to unzip the SonarQube files.
 
     sudo apt-get install zip -y
 

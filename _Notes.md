@@ -1,3 +1,16 @@
+### ToDo links
+https://www.youtube.com/watch?v=SnSgl2JfG9U
+
+
+
+### Other notes
+http://ukveterperemen.ru/
+[info@ukveterperemen.ru](mailto:info@ukveterperemen.ru)
+
+
+http://10.78.77.62:9000/dashboard?id=EK2017-post_refactoring
+http://ts.nostrum.ru:3000/projects/ns-063/issues
+
 hyperion
 setellite
 helios
@@ -33,9 +46,7 @@ https://infostart.ru/1c/articles/810752/#p4
 		t.NAME NOT LIKE 'dt%' AND t.is_ms_shipped = 0 AND i.OBJECT_ID > 255 
 	GROUP BY 
 		t.Name, s.Name, p.Rows ORDER BY t.Name
-		
-
-		
+			
 ```
 http://AGusarov:gFKrZ6G9LWJXAxQ2ubcu@localhost:9999/root/myObsidian
 ```
@@ -54,3 +65,33 @@ https://infostart.ru/public/1285144/
 
 https://infostart.ru/1c/articles/703384/
 https://infostart.ru/1c/articles/811452/
+
+
+![[Pasted image 20211110233735.png]]
+
+
+
+
+
+	ТаблицаДанных = Новый ТаблицаЗначений:
+	ТаблицаДанных.Колонки.Добавить("Профиль");
+	ТаблицаДанных.Колонки.Добавить("ИмяПользователя");
+	ТаблицаДанных.Колонки.Добавить("ПользовательОС");
+	
+	ТекстВводныхДанных = Новый ТекстовыйДокумент;
+	ТекстВводныхДанных.Прочитать(ПутьКФайлу);
+	
+	ВсегоСтрок = ТекстВводныхДанных.КоличествоСтрок();
+	
+	Для НомерСтроки = 1 По ВсегоСтрок Цикл
+		
+		ТекстСтрокаДанных = ТекстВводныхДанных.ПолучитьСтроку(НомерСтроки);
+		РазложитьСтрокуВМассив(ТекстСтрокаДанных)	
+		НоваяСтрока = ТаблицаДанных.Добавить();
+		НоваяСтрока.		
+			
+	КонецЦикла;
+
+
+### Разное
+https://auto.ru/cars/used/sale/mazda/cx_5/1105712767-b303510f/
