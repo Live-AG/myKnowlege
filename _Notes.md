@@ -1,7 +1,7 @@
 ### ToDo links
 https://www.youtube.com/watch?v=SnSgl2JfG9U
 
-
+https://rarus.ru/publications/20201009-ot-ekspertov-1c-rarus-jenkins-1c-446784/#vtoroy-sposob-pipeline
 
 ### Other notes
 http://ukveterperemen.ru/
