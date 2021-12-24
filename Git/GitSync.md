@@ -23,7 +23,7 @@ https://infostart.ru/1c/articles/1157400/
 git clone url_your_project_1c /path/to/project1c/src
 
 ***************************************
-*************** GITSYNK ***************
+*************** GITSYNС ***************
 ***************************************
 #local
 gitsync sync C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work
@@ -33,5 +33,4 @@ gitsync sync C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work_ne
 gitsync --ibconnection /SLNG-SRV-1C-TEST:2541\upp_gitsync_test sync --limit 5 C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work_new
 ```
 
-## Вопросы
-![[Pasted image 20210729085851.png]]
+
