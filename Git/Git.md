@@ -42,3 +42,8 @@ Token
 Хранение параметров авторизации:
 
 	git config --global credential.helper store
+	
+	
+	git remote add gitlab http://AGusarov:q92_2ztv4xgoucPu5m3s@10.78.77.67:8283/sius/ek2017_ext_postref
+
+git remote set-url --add --push gitlab http://AGusarov:q92_2ztv4xgoucPu5m3s@10.78.77.67:8283/sius/ek2017_ext_postref
