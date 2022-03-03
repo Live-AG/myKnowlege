@@ -33,4 +33,33 @@ gitsync sync C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work_ne
 gitsync --ibconnection /SLNG-SRV-1C-TEST:2541\upp_gitsync_test sync --limit 5 C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work_new
 ```
 
+---
 
+```
+gitsync --ibconnection /SLNG-SRV-1C-TEST:2541\upp_gitsync_test sync C:\Git\Storage\ConfStorage_REF_EK2017 C:\Git\Repository\ek2017_Refactoring
+
+  
+
+gitsync --ibconnection /SLNG-SRV-1C-TEST:2541\upp_gitsync_test sync --limit 5 C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work_new
+
+  
+
+http://AGusarov:q92_2ztv4xgoucPu5m3s@10.78.77.67:8283/sius/ek2017_refactoring
+
+  
+  
+
+gitsync --ibconnection /SLNG-SRV-1C-TEST:2541\upp_gitsync_test sync \\10.78.78.10\ref\ConfStorage_REF_EK2017 C:\Git\Repository\ek2017_Refactoring
+
+  
+
+gitsync --ibconnection /SLNG-SRV-1C-TEST:2541\upp_gitsync_test sync tcp://LNG-DMZ-RDS/ConfStorage_REF_EK2017 C:\Git\Repository\ek2017_Refactoring
+
+tcp://LNG-DMZ-RDS/ConfStorage_REF_EK2017
+
+  
+  
+
+gitsync --ibconnection /SLNG-SRV-1C-TEST:2541\upp_gitsync_test sync --storage-user Администратор --storage-pwd 1qaz@WSX tcp://10.78.78.10/ConfStorage_REF_EK2017 C:\Git\Repository\ek2017_Refactoring
+
+```
