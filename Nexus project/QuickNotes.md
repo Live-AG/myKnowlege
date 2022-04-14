@@ -11,3 +11,7 @@ https://infostart.ru/1c/articles/1266995/
 
 ### Useful links
 https://infostart.ru/1c/articles/1537450/
+
+
+#### Команда запуска базы
+Пример: `"C:\Program Files\1cv8\common\1cestart.exe" /S"Lng-srv-1c\GNPH_utp"`
