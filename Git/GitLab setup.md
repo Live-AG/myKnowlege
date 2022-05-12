@@ -57,3 +57,24 @@ to change root password
 then check in browser: `http://localhost:9999'
 
 # Goto Sleep
+
+## TroubleShooting
+
+
+
+#### PUMA error
+```
+Address already in use - \
+bind(2) for "127.0.0.1" port 3000 (Errno::EADDRINUSE)
+```
+
+https://github.com/puma/puma/issues/1785
+
+
+![[Pasted image 20220512170152.png]]
+
+	sudo nano /etc/gitlab/gitlab.rb
+
+в файле установить порт:
+
+	puma['port'] = 3005
