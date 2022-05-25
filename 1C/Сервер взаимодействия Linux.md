@@ -109,8 +109,7 @@ $ sudo ufw status
 http://Your-Server-IP-address/pgadmin4
 ```
 
-Login: `a.gusarov@gnpholding.ru`
-Password: `123123`
+
 
 # Install CS server
 Download CS server: `https://releases.1c.ru/version_files?nick=CollaborationSystem&ver=10.0.47`
@@ -268,3 +267,17 @@ insert in file - заменить `<ServerIP>` :
 
 
 Базу 1С подключаем по адресу: `ws://192.168.1.39:8087`
+
+
+#### Настройки для УХ
+
+`ws://10.78.77.67:8087`
+uh@test.local
+УправлениеХолдингомТест
+
+#### PGAdmin4
+Login: `a.gusarov@gnpholding.ru`
+Password: `123123`
+
+
+
