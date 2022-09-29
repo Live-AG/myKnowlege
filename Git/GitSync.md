@@ -30,7 +30,7 @@ gitsync sync C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work
 gitsync sync C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work_new
 
 #server
-gitsync --ibconnection /SLNG-SRV-1C-TEST:2541\upp_gitsync_test sync --limit 5 C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work_new
+gitsync --ibconnection /SLNG-SRV-1C-TEST:4541\upp_gitsync_test sync --limit 5 C:\Git\Storage\ek2017_upp_work C:\Git\Repository\ek2017_upp_work_new
 ```
 
 ---
